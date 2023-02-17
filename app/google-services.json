@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470201120123",
+    "project_id": "scanner-app-25dc4",
+    "storage_bucket": "scanner-app-25dc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470201120123:android:8ea492173d9932c6d6b9de",
+        "android_client_info": {
+          "package_name": "com.nuzularifin.scannerimage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470201120123-ghn9u226h91u6mhpbvmnhhll9s1fsbq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdXZcTpXlRzCc_6WN7HIM3YXKOvTRQwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470201120123-ghn9u226h91u6mhpbvmnhhll9s1fsbq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
