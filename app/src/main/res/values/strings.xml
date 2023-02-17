@@ -12,5 +12,6 @@
 
     <string name="get_picture">Get Picture</string>
     <string name="see_detail">See Detail</string>
+    <string name="title_data_text">Data Text</string>
     <string name="info_get_picture">Click Get Picture to get Image from Gallery</string>
 </resources>

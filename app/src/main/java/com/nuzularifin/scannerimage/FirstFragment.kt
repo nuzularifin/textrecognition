@@ -172,7 +172,7 @@ class FirstFragment : Fragment() {
                 attachToText(visionText)
             }
             .addOnFailureListener { e ->
-                Log.d("FailedRecognition", "detectText: ${e.printStackTrace()}")
+                e.printStackTrace()
             }
     }
 
@@ -184,6 +184,5 @@ class FirstFragment : Fragment() {
         }
 
         dataText = stringBuilder.toString()
-        Log.d("attachToText", "attachToText: $dataText")
     }
 }
