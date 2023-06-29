@@ -14,4 +14,6 @@
     <string name="see_detail">See Detail</string>
     <string name="title_data_text">Data Text</string>
     <string name="info_get_picture">Click Get Picture to get Image from Gallery</string>
+    <string name="label_result">"Result : "</string>
+    <string name="label_error">Gagal membuat perhitungan mohon coba kembali</string>
 </resources>

@@ -49,3 +49,7 @@ private fun View.hide(hidingStrategy: Int, animate: Boolean = true) {
         visibility = hidingStrategy
     }
 }
+
+fun findMatch(s: String, strings: List<String>): Boolean {
+    return strings.any { s.contains(it) }
+}
