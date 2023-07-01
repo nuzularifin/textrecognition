@@ -3,6 +3,9 @@ package com.nuzularifin.scannerimage
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.view.View
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 
 fun View.visible(animate: Boolean = true) {
     if (animate) {
@@ -52,4 +55,9 @@ private fun View.hide(hidingStrategy: Int, animate: Boolean = true) {
 
 fun findMatch(s: String, strings: List<String>): Boolean {
     return strings.any { s.contains(it) }
+}
+
+fun <T> LiveData<T>.reObserve(owner: LifecycleOwner, observer: Observer<T>) {
+    removeObserver(observer)
+    observe(owner, observer)
 }
