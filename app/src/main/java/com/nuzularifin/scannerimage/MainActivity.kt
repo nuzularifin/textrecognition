@@ -16,12 +16,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import com.nuzularifin.scannerimage.databinding.ActivityMainBinding
+import com.nuzularifin.scannerimage.utils.Constants
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -54,7 +56,6 @@ class MainActivity : AppCompatActivity() {
                 } catch (e: Exception){
                     Toast.makeText(this, "Error loading image", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
 
@@ -71,6 +72,15 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnTakePictureGallery.setOnClickListener {
             chooseImageFromGallery()
+        }
+        val type = Constants.FROM_GALLERY
+
+        if (type == Constants.FROM_CAMERA) {
+            binding.btnTakePictureCamera.visible()
+            binding.btnTakePictureGallery.gone()
+        } else {
+            binding.btnTakePictureCamera.gone()
+            binding.btnTakePictureGallery.visible()
         }
 
         observeViewModel()
@@ -117,18 +127,6 @@ class MainActivity : AppCompatActivity() {
         val gallery = Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         intent.type = "image/*"
         galleryLauncher.launch(gallery)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     private fun pickImageFromCamera() {
