@@ -21,7 +21,7 @@ class MainViewModel() : ViewModel() {
         val visionTextRecognition = stringBuilder.toString()
 
         try {
-            val data = visionTextRecognition.replace("\n", "").split("[/*\\-:+X]".toRegex())
+            val data = visionTextRecognition.replace("\n", "").split("[/*\\-:+xX]".toRegex())
             val number1 = data[0].toInt()
             val number2 = data[1].toInt()
 
