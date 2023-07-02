@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnTakePictureGallery.setOnClickListener {
             chooseImageFromGallery()
         }
-        val type = Constants.FROM_CAMERA
+        val type = Constants.FROM_GALLERY
 
         if (type == Constants.FROM_CAMERA) {
             binding.btnTakePictureCamera.visible()
